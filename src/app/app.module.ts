@@ -5,16 +5,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppEncaminamentModule } from './app-encaminament.module';
 import {M11_EncaminamentComponent} from './m11-encaminament.component'
 import { activitat } from './activitat';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     activitat,
-    M11_EncaminamentComponent
+    M11_EncaminamentComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppEncaminamentModule
+    AppEncaminamentModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,  
+    MatToolbarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

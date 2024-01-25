@@ -36,6 +36,7 @@ import { Component } from '@angular/core';
     </div>
     <h2 *ngIf="resultat<0">el valor es negatiu</h2>
     <h3 *ngIf="resultat>10">el valor es superior a 10</h3>
+    
 
     `,
     styles: ['h2 { color: #900 }', 'h3 {color:#0F0}']

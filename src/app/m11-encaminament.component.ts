@@ -19,22 +19,20 @@ import { NgModule } from '@angular/core';
 @Component({
   selector: 'aplicacio',
   template: `
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">{{titol}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink="/salutacio" routerLinkActive="active">Salutacio </a>
-        <a class="nav-item nav-link" routerLink="/suma" routerLinkActive="active">Suma</a>
-        <a class="nav-item nav-link" routerLink="/primera" routerLinkActive="active">primera</a>
-        <a class="nav-item nav-link " routerLink="/segona" routerLinkActive="active">segona</a>
-        <a class="nav-item nav-link " routerLink="/activitat" routerLinkActive="active">Gerra</a>
-        
-      </div>
-    </div>
-  </nav>
+ <mat-toolbar color="primary">
+  <span>{{ titol }}</span>
+  <button mat-button [matMenuTriggerFor]="menu">
+    Menú
+  </button>
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/salutacio" routerLinkActive="active">Salutacio</a>
+    <a mat-menu-item routerLink="/suma" routerLinkActive="active">Suma</a>
+    <a mat-menu-item routerLink="/primera" routerLinkActive="active">Primera</a>
+    <a mat-menu-item routerLink="/segona" routerLinkActive="active">Segona</a>
+    <a mat-menu-item routerLink="/activitat" routerLinkActive="active">Gerra</a>
+  </mat-menu>
+</mat-toolbar>
+
     <router-outlet></router-outlet>
   `
 })

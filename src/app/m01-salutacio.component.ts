@@ -15,12 +15,12 @@
  * NOTES
  * ORIGEN
  * Desenvolupament Aplicacions Web. Jesuïtes El Clot
- */
+ */ 
 
 import { Component } from '@angular/core';
 @Component({
   selector: 'aplicacio',
-  template: '<h1>Hola, Angular de Google!</h1>'
+  templateUrl: 'index2.html'
 })
 export class M01_SalutacioComponent { }
 

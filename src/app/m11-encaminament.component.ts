@@ -19,19 +19,27 @@ import { NgModule } from '@angular/core';
 @Component({
   selector: 'aplicacio',
   template: `
- <mat-toolbar color="primary">
-  <span>{{ titol }}</span>
-  <button mat-button [matMenuTriggerFor]="menu">
-    Menú
-  </button>
-  <mat-menu #menu="matMenu">
-    <a mat-menu-item routerLink="/salutacio" routerLinkActive="active">Salutacio</a>
-    <a mat-menu-item routerLink="/suma" routerLinkActive="active">Suma</a>
-    <a mat-menu-item routerLink="/primera" routerLinkActive="active">Primera</a>
-    <a mat-menu-item routerLink="/segona" routerLinkActive="active">Segona</a>
-    <a mat-menu-item routerLink="/activitat" routerLinkActive="active">Gerra</a>
-  </mat-menu>
+  <style>
+
+.custom-toolbar button {
+  margin-right: 10px; /* Ajusta el espacio entre los botones */
+  color: white; /* Cambia el color del texto de los botones */
+}
+
+.custom-toolbar button:hover {
+  background-color: #7c1fb2; /* Cambia el color de fondo al pasar el ratón sobre un botón */
+}
+
+  </style>
+  <mat-toolbar color="primary" class="custom-toolbar">
+  <button mat-button routerLink="/salutacio" routerLinkActive="active">Salutacio</button>
+  <button mat-button routerLink="/suma" routerLinkActive="active">Suma</button>
+  <button mat-button routerLink="/primera" routerLinkActive="active">Primera</button>
+  <button mat-button routerLink="/segona" routerLinkActive="active">Segona</button>
+  <button mat-button routerLink="/activitat" routerLinkActive="active">Gerra</button>
 </mat-toolbar>
+
+
 
     <router-outlet></router-outlet>
   `

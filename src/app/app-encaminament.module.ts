@@ -17,7 +17,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { GeolocationComponent } from './geolocation.component';
+import { GeolocationComponent } from './geolocalizacion.component';
 import { M02_SumaComponent } from './m02-suma.component';
 import {M15_PrimeraComponent} from './m15-primera.component'
 import {M15_SegonaComponent} from './m15-segona.component'

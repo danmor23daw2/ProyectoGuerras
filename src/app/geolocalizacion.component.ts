@@ -12,8 +12,8 @@ import VectorSource from 'ol/source/Vector';
 
 @Component({
   selector: 'app-geolocation',
-  templateUrl: './geolocation.component.html',
-  styleUrls: ['./geolocation.component.css']
+  templateUrl: './geolocalizacion.component.html',
+  styleUrls: ['./geolocalizacion.component.css']
 })
 export class GeolocationComponent implements OnInit {
 

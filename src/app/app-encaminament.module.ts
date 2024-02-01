@@ -17,7 +17,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { M01_SalutacioComponent } from './m01-salutacio.component';
+import { GeolocationComponent } from './geolocation.component';
 import { M02_SumaComponent } from './m02-suma.component';
 import {M15_PrimeraComponent} from './m15-primera.component'
 import {M15_SegonaComponent} from './m15-segona.component'
@@ -25,8 +25,8 @@ import {activitat} from './activitat'
 
 const encaminaments: Routes = [
   { path: '', redirectTo: '/salutacio', pathMatch: 'full' },
-  { path: 'salutacio', component: M01_SalutacioComponent },
-  { path: 'suma', component: M02_SumaComponent },
+  { path: 'salutacio', component: M02_SumaComponent },
+  { path: 'suma', component: GeolocationComponent },
   { path: 'primera', component: M15_PrimeraComponent },
   { path: 'segona', component: M15_SegonaComponent },
   { path: 'activitat', component: activitat },

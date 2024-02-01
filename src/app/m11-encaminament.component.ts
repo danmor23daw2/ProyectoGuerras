@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
       <mat-icon>date_range</mat-icon>
       </button>
       <button mat-button routerLink="/segona" routerLinkActive="active">
-        <mat-icon>folder</mat-icon>
+      <mat-icon>favorite_border</mat-icon>
       </button>
       <button mat-button routerLink="/activitat" routerLinkActive="active">
         <mat-icon>build</mat-icon>

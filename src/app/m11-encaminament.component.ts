@@ -5,20 +5,17 @@ import { Component } from '@angular/core';
   template: `
     <mat-toolbar color="primary" class="custom-toolbar">
       <div class="spacer"></div>
-      <mat-icon mat-button routerLink="/salutacio" routerLinkActive="active">
+      <mat-icon class="home"mat-button routerLink="/salutacio" routerLinkActive="active">
         home
       </mat-icon>
-      <mat-icon mat-button routerLink="/suma" routerLinkActive="active">
+      <mat-icon mat-button routerLink="/geolocalizacion" routerLinkActive="active">
         room
       </mat-icon>
       <mat-icon routerLink="/primera" routerLinkActive="active">
         date_range
       </mat-icon>
-      <mat-icon mat-button routerLink="/segona" routerLinkActive="active">
-        favorite_border
-      </mat-icon>
       <mat-icon mat-button routerLink="/activitat" routerLinkActive="active">
-        build
+        favorite_border
       </mat-icon>
     </mat-toolbar>
 
@@ -48,6 +45,11 @@ import { Component } from '@angular/core';
     .custom-toolbar mat-icon:hover {
       color: #a781e8; 
       
+    }
+    .home{
+      display: flex;
+      justify-content: flex;
+      align-items: center;
     }
   `]
 })

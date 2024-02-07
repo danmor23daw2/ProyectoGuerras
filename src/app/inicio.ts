@@ -13,7 +13,7 @@ template: `
         <p>|</p>
         <p>|</p>
         <p>|</p>
-        <p>V</p>
+        <p class="V">V</p>
     </div>
 </div>
 
@@ -45,7 +45,7 @@ template: `
         </mat-card>
         <mat-card class="ejemplo-tarjeta">
             <mat-card-header>
-                <mat-card-title>Tarjeta 3</mat-card-title>
+                <mat-card-title>Protestas</mat-card-title>
             </mat-card-header>
             <img mat-card-image src="./assets/protesta.jpg" style="width: 100%; height: 100%;">
             <mat-card-content>
@@ -57,10 +57,10 @@ template: `
 styles: [`
     @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
     .deslizar {
-    font-style: italic;
-    color: #888;
-    font-size: 14px;
-    margin-top: 10px;
+        font-style: italic;
+        color: #888;
+        font-size: 14px;
+        margin-top: 10px;
     }
     .contenedor {
         display: flex;
@@ -105,16 +105,30 @@ styles: [`
     .contenedor-tarjetas {
         display: flex; 
         justify-content: space-between; 
+        color:white;
+    }
+    .V{
+        font-family: 'Arial';
+    }
+    mat-card-title{
+        font-family: "Exo 2", sans-serif;
     }
 
     .contenedor-tarjetas .ejemplo-tarjeta {
-        width: 30%; 
+        width: 100%; 
         opacity: 0; 
+        margin:4%;
         transition: opacity 0.5s ease; 
+        
+    }
+    .contenedor-tarjetas .ejemplo-tarjeta p {
+        margin-top:2%;
+        color:white;
     }
 
     .contenedor.mostrar, .contenedor-tarjetas.mostrar .ejemplo-tarjeta {
         opacity: 1; 
+        
     }
 
     h1 {
@@ -138,6 +152,7 @@ styles: [`
 
     .ejemplo-tarjeta {
         width: 30%;
+        background-color:purple;
     }
     `]
 })

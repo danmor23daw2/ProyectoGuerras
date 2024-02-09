@@ -1,26 +1,32 @@
 import { Component } from '@angular/core';
-import { GuerraHistorica } from '../class';
 
 @Component({
-    selector: 'aplicacio',
-    templateUrl: 'guerras.html',
-    styleUrls: ['guerras.css']
+  selector: 'aplicacion',
+  templateUrl: 'guerras.html',
+  styleUrls: ['guerras.css'],
 })
 
 export class Guerras {
-    listaRegistros: GuerraHistorica[] = [];
-    nombreGuerra: string = "";
-    religion: string = "";
-    geopolitica: string = "";
-    mostrarTabla: boolean = false;
+  selectedOption: string = '';
+  selectedTitle: string = 'La guerra santa';
+  selectedContent: string = 'Las guerras de religión en Francia, que tuvieron lugar principalmente en el siglo XVI entre católicos y protestantes...';
 
-    registrarGuerra() {
-        let guerra: GuerraHistorica = new GuerraHistorica(this.nombreGuerra, this.religion, this.geopolitica);
-        this.listaRegistros.push(guerra);
-        this.mostrarTabla = false;
+  onOptionSelected() {
+    switch (this.selectedOption) {
+      case '1':
+        this.selectedTitle = 'La guerra santa';
+        this.selectedContent = 'Información sobre la guerra santa...';
+        break;
+      case '2':
+        this.selectedTitle = 'Otro título';
+        this.selectedContent = 'Información sobre la otra opción...';
+        break;
+      case '3':
+        this.selectedTitle = 'Otro título más';
+        this.selectedContent = 'Información sobre la tercera opción...';
+        break;
+      default:
+        break;
     }
-
-    mostrarRegistros() {
-        this.mostrarTabla = true;
-    }
+  }
 }

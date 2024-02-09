@@ -13,6 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatInputModule} from '@angular/material/input';
+import {NgFor} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,12 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,
-    ScrollingModule
+    ScrollingModule,
+    MatFormFieldModule, 
+    MatSelectModule, 
+    NgFor, 
+    MatInputModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

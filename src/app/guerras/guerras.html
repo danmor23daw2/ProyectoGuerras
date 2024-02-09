@@ -4,35 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relación entre Religión y Geopolítica en Guerras Históricas</title>
+    <style>
+        body {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+        #selector{
+    margin-top: 40%;
+}
+    </style>
 </head>
 <body>
+    <h2>{{ selectedTitle }}</h2>
+<div>
+  <p>{{ selectedContent }}</p>
+</div>
 
-    <h1>Registro de Guerras Históricas</h1>
-
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Nombre de la guerra" [(ngModel)]="nombreGuerra" required>
-        <input type="text" class="form-control" placeholder="Religión involucrada" [(ngModel)]="religion" required>
-        <input type="text" class="form-control" placeholder="Ubicación geográfica" [(ngModel)]="geopolitica" required>
-        <button mat-raised-button color="primary" (click)="registrarGuerra()">Registrar</button>
-    </div>
-    
-
-    <button mat-raised-button color="accent" id="boton" (click)="mostrarRegistros()">Mostrar Registros</button>
-    <table *ngIf="mostrarTabla && listaRegistros.length > 0">
-        <thead>
-            <tr>
-                <th>Nombre de la Guerra</th>
-                <th>Religión</th>
-                <th>Ubicación Geográfica</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let registro of listaRegistros">
-                <td>{{ registro.nombreGuerra }}</td>
-                <td>{{ registro.religion }}</td>
-                <td>{{ registro.geopolitica }}</td>
-            </tr>
-        </tbody>
-    </table>
+<mat-form-field>
+  <mat-label>Select an option</mat-label>
+  <mat-select [(ngModel)]="selectedOption" (ngModelChange)="onOptionSelected()">
+    <mat-option value="1">Option 1</mat-option>
+    <mat-option value="2">Option 2</mat-option>
+    <mat-option value="3">Option 3</mat-option>
+  </mat-select>
+</mat-form-field>
 </body>
 </html>

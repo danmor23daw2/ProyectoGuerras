@@ -17,17 +17,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { GeolocationComponent } from './geolocalizacion.component';
-import { Inicio } from './inicio';
+import { GeolocationComponent } from './geolocalizacion/geolocalizacion.component';
+import { Inicio } from './inicio/inicio';
 import {M15_PrimeraComponent} from './m15-primera.component'
-import {activitat} from './activitat'
+import {Guerras} from './guerras/guerras'
 
 const encaminaments: Routes = [
   { path: '', redirectTo: '/salutacio', pathMatch: 'full' },
   { path: 'salutacio', component: Inicio },
   { path: 'geolocalizacion', component: GeolocationComponent },
   { path: 'primera', component: M15_PrimeraComponent },
-  { path: 'activitat', component: activitat },
+  { path: 'guerras', component: Guerras },
 ];
 
 @NgModule({

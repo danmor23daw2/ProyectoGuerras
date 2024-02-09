@@ -1,4 +1,3 @@
-// geolocation.component.ts
 import { Component, OnInit } from '@angular/core';
 import Map from 'ol/Map';
 import View from 'ol/View';
@@ -13,7 +12,7 @@ import VectorSource from 'ol/source/Vector';
 @Component({
   selector: 'app-geolocation',
   templateUrl: './geolocalizacion.component.html',
-  styleUrls: ['./geolocalizacion.component.css']
+  styleUrls: ['../../styles.css']
 })
 export class GeolocationComponent implements OnInit {
 

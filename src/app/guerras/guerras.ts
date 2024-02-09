@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { GuerraHistorica } from './class';
+import { GuerraHistorica } from '../class';
 
 @Component({
     selector: 'aplicacio',
-    templateUrl: 'index.html'
+    templateUrl: 'guerras.html',
+    styleUrls: ['guerras.css']
 })
 
-export class activitat {
+export class Guerras {
     listaRegistros: GuerraHistorica[] = [];
     nombreGuerra: string = "";
     religion: string = "";

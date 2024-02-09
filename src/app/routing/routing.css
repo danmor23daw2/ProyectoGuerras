@@ -1,0 +1,28 @@
+.custom-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .custom-toolbar mat-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 60px; 
+    height: 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.3s; 
+    cursor: pointer;
+  }
+
+  .custom-toolbar mat-icon:hover {
+    color: #a781e8; 
+    
+  }
+  .home{
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+  }

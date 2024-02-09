@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppEncaminamentModule } from './app-encaminament.module';
-import {M11_EncaminamentComponent} from './m11-encaminament.component'
-import { Inicio } from './inicio';
-import { activitat } from './activitat';
+import {M11_EncaminamentComponent} from './routing/routing'
+import { Inicio } from './inicio/inicio';
+import { Guerras } from './guerras/guerras';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
@@ -16,7 +16,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
-    activitat,
+    Guerras,
     Inicio,
     M11_EncaminamentComponent,
     

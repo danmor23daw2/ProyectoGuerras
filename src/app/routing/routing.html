@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <mat-toolbar color="primary" class="custom-toolbar">
+        <div class="spacer"></div>
+        <mat-icon class="home"mat-button routerLink="/salutacio" routerLinkActive="active">
+          home
+        </mat-icon>
+        <mat-icon mat-button routerLink="/geolocalizacion" routerLinkActive="active">
+          room
+        </mat-icon>
+        <mat-icon routerLink="/primera" routerLinkActive="active">
+          date_range
+        </mat-icon>
+        <mat-icon mat-button routerLink="/guerras" routerLinkActive="active">
+          favorite_border
+        </mat-icon>
+      </mat-toolbar>
+  
+      <router-outlet></router-outlet>
+</body>
+</html>

@@ -10,28 +10,58 @@ import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import { Component } from '@angular/core';
 import { DatosService } from './datos.service';
-import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'aplicacio',
   templateUrl: './geolocalizacion.component.html',
-  styleUrls: ['./geolocalizacion.component.css'] 
+  styleUrls: ['./geolocalizacion.component.css']
 })
 
 export class GeolocationComponent implements OnInit {
-  continenteSeleccionado = '';
+  continenteSeleccionado: string = '';
   paisSeleccionado: any;
   paises: any[] = [];
   guerras: any[] = [];
-  displayedColumns: string[] = ['nombre', 'paisDe'];
-  filaSeleccionada: number = -1;
+  filteredContinentes: Observable<string[]>;
+  continentes: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía'];
+  
 
   constructor(private datosService: DatosService) {
+    this.filteredContinentes = new Observable<string[]>(observer => {
+      observer.next(this.filterContinentes('')); 
+    }).pipe(
+      startWith(''),
+      map(value => {
+        if (Array.isArray(value)) {
+          return this.continentes;
+        } else {
+          return this.filterContinentes(value);
+        }
+      })
+    );
+  }
+  
+  
+  
+
+  private filterContinentes(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.continentes.filter(cont => cont.toLowerCase().includes(filterValue));
   }
 
-  buscarPaises() {
-    if (!this.continenteSeleccionado) return;
-    this.datosService.getPaisesPorContinente(this.continenteSeleccionado)
+  displayFn(cont: string): string {
+    return cont ? cont : '';
+  }
+
+  cargarContinentes() {
+    this.continenteSeleccionado = '';
+  }
+  
+  buscarPaises(cont: string) {
+    if (!cont) return;
+    this.datosService.getPaisesPorContinente(cont)
       .subscribe(
         (paises: any[]) => {
           this.paises = paises;
@@ -41,11 +71,12 @@ export class GeolocationComponent implements OnInit {
         }
       );
   }
-  
+
   mostrarGuerras(pais: any) {
     this.guerras = pais.guerras;
     this.paisSeleccionado = pais;
   }
+
   ngOnInit(): void {
     this.iniciarMapa();
   }
@@ -88,7 +119,6 @@ export class GeolocationComponent implements OnInit {
     geolocation.on('change:position', function () {
       var coordinates = geolocation.getPosition();
       positionFeature.setGeometry(coordinates ? new Point(coordinates) : undefined);
-
     });
 
     geolocation.setTracking(true);

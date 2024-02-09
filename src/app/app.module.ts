@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppEncaminamentModule } from './app-encaminament.module';
@@ -41,7 +44,10 @@ import {NgIf, NgFor} from '@angular/common';
     HttpClientModule,
     MatTableModule,
     NgIf,
-    NgFor
+    NgFor,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

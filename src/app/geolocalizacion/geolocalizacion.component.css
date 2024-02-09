@@ -1,6 +1,13 @@
 table {
-    background-color: #c123da; 
+    background-color: #f5f0f0; 
+    color:black;
+    width: 100%;
 }
+table tr, th, td{
+    border: 1px solid #ccc;
+    color:black;
+}
+
 li {
     cursor: pointer;
     width: 20%;
@@ -10,3 +17,11 @@ li {
 li:hover {
     transform: scale(1.1); 
 }
+::ng-deep .mat-form-field {
+    background-color: white !important; /* Cambia el color de fondo del campo de formulario */
+  }
+  
+  ::ng-deep .mat-input-element {
+    color: black !important; /* Cambia el color del texto del campo de entrada */
+  }
+  

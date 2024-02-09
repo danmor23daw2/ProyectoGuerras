@@ -6,18 +6,53 @@
         {
           "nombre": "España",
           "guerras": [
-            {"nombre": "Guerra Civil Española", "year": 1936},
-            {"nombre": "Guerra de la Independencia", "year": 1808}
+            { "nombre": "Guerra Civil Española", "year": 1936 },
+            { "nombre": "Guerra de la Independencia", "year": 1808 },
+            { "nombre": "Guerra de Sucesión Española", "year": 1701 },
+            { "nombre": "Conquista de Granada", "year": 1492 },
+            { "nombre": "Revolución de Asturias", "year": 1934 }
           ]
         },
         {
           "nombre": "Francia",
           "guerras": [
-            {"nombre": "Primera Guerra Mundial", "year": 1914},
-            {"nombre": "Segunda Guerra Mundial", "year": 1939}
+            { "nombre": "Primera Guerra Mundial", "year": 1914 },
+            { "nombre": "Segunda Guerra Mundial", "year": 1939 },
+            { "nombre": "Guerra de los Cien Años", "year": 1337 },
+            { "nombre": "Guerra de los Treinta Años", "year": 1618 },
+            { "nombre": "Guerra de Napoleón", "year": 1803 }
+          ]
+        },
+        {
+          "nombre": "Alemania",
+          "guerras": [
+            { "nombre": "Guerra Franco-Prusiana", "year": 1870 },
+            { "nombre": "Guerra de los Campesinos", "year": 1524 },
+            { "nombre": "Guerra de los Siete Años", "year": 1756 },
+            { "nombre": "Guerra de los Treinta Años", "year": 1618 },
+            { "nombre": "Batalla de Stalingrado", "year": 1942 }
+          ]
+        },
+        {
+          "nombre": "Italia",
+          "guerras": [
+            { "nombre": "Guerras Púnicas", "year": 264 },
+            { "nombre": "Guerras de la Independencia Italiana", "year": 1848 },
+            { "nombre": "Guerra de Etiopía", "year": 1935 },
+            { "nombre": "Guerras Napoleónicas", "year": 1796 },
+            { "nombre": "Guerra de Véneto", "year": 1866 }
+          ]
+        },
+        {
+          "nombre": "Reino Unido",
+          "guerras": [
+            { "nombre": "Guerra de los Cien Años", "year": 1337 },
+            { "nombre": "Guerras Napoleónicas", "year": 1796 },
+            { "nombre": "Guerra de los Treinta Años", "year": 1618 },
+            { "nombre": "Primera Guerra Mundial", "year": 1914 },
+            { "nombre": "Segunda Guerra Mundial", "year": 1939 }
           ]
         }
-
       ]
     },
     {
@@ -26,20 +61,219 @@
         {
           "nombre": "Estados Unidos",
           "guerras": [
-            {"nombre": "Guerra de Secesión", "year": 1861},
-            {"nombre": "Guerra de Vietnam", "year": 1955}
+            { "nombre": "Guerra de Secesión", "year": 1861 },
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra de la Independencia de los Estados Unidos", "year": 1775 },
+            { "nombre": "Guerra Civil Americana", "year": 1861 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
           ]
         },
         {
           "nombre": "Brasil",
           "guerras": [
-            {"nombre": "Guerra de la Triple Alianza", "year": 1864},
-            {"nombre": "Guerra de Canudos", "year": 1896}
+            { "nombre": "Guerra de la Triple Alianza", "year": 1864 },
+            { "nombre": "Guerra de Canudos", "year": 1896 },
+            { "nombre": "Guerra de la Independencia de Brasil", "year": 1822 },
+            { "nombre": "Guerra de Acre", "year": 1902 },
+            { "nombre": "Guerra del Paraguay", "year": 1864 }
+          ]
+        },
+        {
+          "nombre": "Argentina",
+          "guerras": [
+            { "nombre": "Guerra del Desierto", "year": 1879 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra del Paraná", "year": 1845 },
+            { "nombre": "Guerra de la Triple Alianza", "year": 1864 },
+            { "nombre": "Guerra de Independencia de Argentina", "year": 1810 }
+          ]
+        },
+        {
+          "nombre": "Mexico",
+          "guerras": [
+            { "nombre": "Guerra de la Independencia de Mexico", "year": 1810 },
+            { "nombre": "Guerra Cristera", "year": 1926 },
+            { "nombre": "Guerra de Intervención Estadounidense", "year": 1846 },
+            { "nombre": "Guerra Mexicano-Estadounidense", "year": 1846 },
+            { "nombre": "Guerra de Reforma", "year": 1857 }
+          ]
+        },
+        {
+          "nombre": "Canada",
+          "guerras": [
+            { "nombre": "Guerra de 1812", "year": 1812 },
+            { "nombre": "Guerra del Golfo", "year": 1990 },
+            { "nombre": "Guerra de los Siete Años", "year": 1756 },
+            { "nombre": "Guerra de la Independencia de Canadá", "year": 1837 },
+            { "nombre": "Guerra de la Triple Alianza", "year": 1864 }
           ]
         }
-
+      ]
+    },
+    {
+      "nombre": "Asia",
+      "paises": [
+        {
+          "nombre": "China",
+          "guerras": [
+            { "nombre": "Guerra Civil China", "year": 1927 },
+            { "nombre": "Guerra del Opio", "year": 1839 },
+            { "nombre": "Guerra Sino-Japonesa", "year": 1937 },
+            { "nombre": "Invasión Japonesa de China", "year": 1931 },
+            { "nombre": "Guerra Civil China", "year": 1946 }
+          ]
+        },
+        {
+          "nombre": "India",
+          "guerras": [
+            { "nombre": "Guerra Indo-Pakistaní de 1947", "year": 1947 },
+            { "nombre": "Guerra Indo-Pakistaní de 1965", "year": 1965 },
+            { "nombre": "Guerra Indo-Pakistaní de 1971", "year": 1971 },
+            { "nombre": "Guerra de Kargil", "year": 1999 },
+            { "nombre": "Guerra Indo-China de 1962", "year": 1962 }
+          ]
+        },
+        {
+          "nombre": "Japón",
+          "guerras": [
+            { "nombre": "Guerra del Pacífico", "year": 1941 },
+            { "nombre": "Guerra de Corea", "year": 1950 },
+            { "nombre": "Guerra Sino-Japonesa", "year": 1937 },
+            { "nombre": "Guerra Ruso-Japonesa", "year": 1904 },
+            { "nombre": "Segunda Guerra Mundial", "year": 1939 }
+          ]
+        },
+        {
+          "nombre": "Rusia",
+          "guerras": [
+            { "nombre": "Guerra Civil Rusa", "year": 1917 },
+            { "nombre": "Guerras Napoleónicas", "year": 1799 },
+            { "nombre": "Guerra Ruso-Japonesa", "year": 1904 },
+            { "nombre": "Guerra de Crimea", "year": 1853 },
+            { "nombre": "Guerra de Chechenia", "year": 1994 }
+          ]
+        },
+        {
+          "nombre": "Arabia Saudita",
+          "guerras": [
+            { "nombre": "Guerra Civil Yemení", "year": 2015 },
+            { "nombre": "Guerra de Yemen", "year": 1934 },
+            { "nombre": "Guerra de Yom Kippur", "year": 1973 },
+            { "nombre": "Guerra del Golfo", "year": 1990 },
+            { "nombre": "Invasión Saudita de Yemen", "year": 2015 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Africa",
+      "paises": [
+        {
+          "nombre": "Sudáfrica",
+          "guerras": [
+            { "nombre": "Guerra de los Bóeres", "year": 1899 },
+            { "nombre": "Guerra de Angola", "year": 1975 },
+            { "nombre": "Guerra de Namibia", "year": 1966 },
+            { "nombre": "Guerra Civil de Mozambique", "year": 1977 },
+            { "nombre": "Guerra Civil de Rhodesia", "year": 1964 }
+          ]
+        },
+        {
+          "nombre": "Egipto",
+          "guerras": [
+            { "nombre": "Guerra árabe-israelí de 1948", "year": 1948 },
+            { "nombre": "Guerra árabe-israelí de 1956", "year": 1956 },
+            { "nombre": "Guerra árabe-israelí de 1967", "year": 1967 },
+            { "nombre": "Guerra árabe-israelí de 1973", "year": 1973 },
+            { "nombre": "Guerra del Sinaí", "year": 1956 }
+          ]
+        },
+        {
+          "nombre": "Nigeria",
+          "guerras": [
+            { "nombre": "Guerra Civil de Nigeria", "year": 1967 },
+            { "nombre": "Guerra de Biafra", "year": 1967 },
+            { "nombre": "Guerra del Delta del Níger", "year": 2004 },
+            { "nombre": "Guerra de Ife-Modakeke", "year": 1999 },
+            { "nombre": "Guerra Civil de Nigeria", "year": 1967 }
+          ]
+        },
+        {
+          "nombre": "Libia",
+          "guerras": [
+            { "nombre": "Guerra Civil Libia", "year": 2011 },
+            { "nombre": "Invasión de Libia por Italia", "year": 1911 },
+            { "nombre": "Invasión de Libia por Italia", "year": 1922 },
+            { "nombre": "Operación Escudo del Desierto", "year": 1986 },
+            { "nombre": "Guerra Civil Libia", "year": 2014 }
+          ]
+        },
+        {
+          "nombre": "Kenia",
+          "guerras": [
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de Chechenia", "year": 1994 },
+            { "nombre": "Guerra de Corea", "year": 1950 },
+            { "nombre": "Guerra del Congo", "year": 1998 }
+          ]
+        }
+      ]
+    },
+    {
+      "nombre": "Oceania",
+      "paises": [
+        {
+          "nombre": "Australia",
+          "guerras": [
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
+          ]
+        },
+        {
+          "nombre": "Nueva Zelanda",
+          "guerras": [
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
+          ]
+        },
+        {
+          "nombre": "Fiyi",
+          "guerras": [
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
+          ]
+        },
+        {
+          "nombre": "Samoa",
+          "guerras": [
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
+          ]
+        },
+        {
+          "nombre": "Papúa Nueva Guinea",
+          "guerras": [
+            { "nombre": "Guerra de Vietnam", "year": 1955 },
+            { "nombre": "Guerra del Golfo Pérsico", "year": 1990 },
+            { "nombre": "Guerra de las Malvinas", "year": 1982 },
+            { "nombre": "Guerra de Afganistán", "year": 2001 },
+            { "nombre": "Guerra de Corea", "year": 1950 }
+          ]
+        }
       ]
     }
-
   ]
 }

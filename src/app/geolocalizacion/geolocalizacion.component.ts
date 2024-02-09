@@ -20,13 +20,13 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export class GeolocationComponent implements OnInit {
   continenteSeleccionado = '';
+  paisSeleccionado: any;
+  paises: any[] = [];
   guerras: any[] = [];
   displayedColumns: string[] = ['nombre', 'paisDe'];
-  paises: MatTableDataSource<any>;
   filaSeleccionada: number = -1;
 
   constructor(private datosService: DatosService) {
-    this.paises = new MatTableDataSource<any>();
   }
 
   buscarPaises() {
@@ -34,25 +34,20 @@ export class GeolocationComponent implements OnInit {
     this.datosService.getPaisesPorContinente(this.continenteSeleccionado)
       .subscribe(
         (paises: any[]) => {
-          this.paises.data = paises;
+          this.paises = paises;
         },
         (error) => {
           console.error('Error fetching countries:', error);
         }
       );
   }
-  seleccionarPais(pais: any, index: number) {
-    console.log('Pais seleccionado:', pais);
-    this.filaSeleccionada = index;
-    this.guerras = pais.guerras; // Actualiza la lista de guerras asociadas al país seleccionado
-  }
-
-  mostrarGuerras() {
-    return this.guerras.length > 0; // Devuelve true si hay guerras para mostrar
+  
+  mostrarGuerras(pais: any) {
+    this.guerras = pais.guerras;
+    this.paisSeleccionado = pais;
   }
   ngOnInit(): void {
     this.iniciarMapa();
-    this.paises = new MatTableDataSource<any>();
   }
 
   iniciarMapa() {

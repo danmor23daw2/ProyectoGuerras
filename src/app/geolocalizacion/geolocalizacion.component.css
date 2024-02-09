@@ -1,4 +1,12 @@
-.selected {
+table {
     background-color: #c123da; 
-  }
-  
+}
+li {
+    cursor: pointer;
+    width: 20%;
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.1); 
+}

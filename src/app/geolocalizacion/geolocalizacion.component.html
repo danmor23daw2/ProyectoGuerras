@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="text-align: left; margin-left:10px;font-size: 40px; margin-top: -50px; color: white; font-family: 'Exo 2', sans-serif;">Geolocalización</h1>
-    <div style="border: 5px solid rebeccapurple; margin-top: 30px;">
-    <div id="map" style="width: 100%; height: 500px;"></div>
-    </div>
-    <input type="text" [(ngModel)]="continenteSeleccionado" (input)="buscarPaises()">
-    <table mat-table [dataSource]="paises">
+<h1 style="text-align: left; margin-left:10px;font-size: 40px; margin-top: -50px; color: white; font-family: 'Exo 2', sans-serif;">Geolocalización</h1>
 
-    <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let pais; let i = index" 
-            [class.selected]="i === filaSeleccionada" 
-            (click)="seleccionarPais(pais, i)"> 
-            {{ pais.nombre }} 
-        </td>
-    </ng-container>
+<div style="border: 5px solid rebeccapurple; margin-top: 80px;">
+  <div id="map" style="width: 100%; height: 500px;"></div>
+</div>
 
-    <ng-container matColumnDef="paisDe">
-      <th mat-header-cell *matHeaderCellDef> País de </th>
-      <td mat-cell *matCellDef="let pais; let i = index" 
-            [class.selected]="i === filaSeleccionada" 
-            (click)="seleccionarPais(pais, i)"> 
-            {{ pais.paisDe }} 
-        </td>
-    </ng-container>
+<input type="text" [(ngModel)]="continenteSeleccionado" (input)="buscarPaises()">
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-  <div *ngIf="mostrarGuerras()">
-    <h2>Guerras del país seleccionado:</h2>
+<div style="display: flex; flex-direction: row;">
+  <div style="flex: 1;">
+    <h2>Lista de Países</h2>
     <ul>
-      <li *ngFor="let guerra of guerras">{{ guerra.nombre }} ({{ guerra.year }})</li>
+      <li *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</li>
     </ul>
-    </div>
+  </div>
 
-</body>
-</html>
+  <div style="flex: 1;" *ngIf="guerras.length > 0">
+    <h2>Guerras de {{ paisSeleccionado?.nombre }}</h2>
+    <table mat-table [dataSource]="guerras">
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre de la Guerra </th>
+        <td mat-cell *matCellDef="let guerra"> {{ guerra.nombre }} </td>
+      </ng-container>
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef> Año </th>
+        <td mat-cell *matCellDef="let guerra"> {{ guerra.year }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['nombre', 'year']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['nombre', 'year'];"></tr>
+    </table>
+  </div>
+</div>

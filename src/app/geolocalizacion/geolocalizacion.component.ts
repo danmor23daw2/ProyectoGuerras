@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { OnInit } from '@angular/core';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -8,16 +8,51 @@ import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
+import { Component } from '@angular/core';
+import { DatosService } from './datos.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-geolocation',
+  selector: 'aplicacio',
   templateUrl: './geolocalizacion.component.html',
-  styleUrls: ['../../styles.css']
+  styleUrls: ['./geolocalizacion.component.css'] 
 })
-export class GeolocationComponent implements OnInit {
 
+export class GeolocationComponent implements OnInit {
+  continenteSeleccionado = '';
+  guerras: any[] = [];
+  displayedColumns: string[] = ['nombre', 'paisDe'];
+  paises: MatTableDataSource<any>;
+  filaSeleccionada: number = -1;
+
+  constructor(private datosService: DatosService) {
+    this.paises = new MatTableDataSource<any>();
+  }
+
+  buscarPaises() {
+    if (!this.continenteSeleccionado) return;
+    this.datosService.getPaisesPorContinente(this.continenteSeleccionado)
+      .subscribe(
+        (paises: any[]) => {
+          this.paises.data = paises;
+        },
+        (error) => {
+          console.error('Error fetching countries:', error);
+        }
+      );
+  }
+  seleccionarPais(pais: any, index: number) {
+    console.log('Pais seleccionado:', pais);
+    this.filaSeleccionada = index;
+    this.guerras = pais.guerras; // Actualiza la lista de guerras asociadas al país seleccionado
+  }
+
+  mostrarGuerras() {
+    return this.guerras.length > 0; // Devuelve true si hay guerras para mostrar
+  }
   ngOnInit(): void {
     this.iniciarMapa();
+    this.paises = new MatTableDataSource<any>();
   }
 
   iniciarMapa() {

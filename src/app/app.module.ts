@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppEncaminamentModule } from './app-encaminament.module';
 import {M11_EncaminamentComponent} from './routing/routing'
+import { GeolocationComponent} from './geolocalizacion/geolocalizacion.component'
 import { Inicio } from './inicio/inicio';
 import { Guerras } from './guerras/guerras';
 import {MatIconModule} from '@angular/material/icon';
@@ -13,12 +15,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatTableModule} from '@angular/material/table';
+import {NgIf, NgFor} from '@angular/common';
 
 @NgModule({
   declarations: [
     Guerras,
     Inicio,
     M11_EncaminamentComponent,
+    GeolocationComponent
     
   ],
   imports: [
@@ -32,7 +37,11 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,
-    ScrollingModule
+    ScrollingModule,
+    HttpClientModule,
+    MatTableModule,
+    NgIf,
+    NgFor
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

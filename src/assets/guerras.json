@@ -1,0 +1,45 @@
+{
+  "continentes": [
+    {
+      "nombre": "Europa",
+      "paises": [
+        {
+          "nombre": "España",
+          "guerras": [
+            {"nombre": "Guerra Civil Española", "year": 1936},
+            {"nombre": "Guerra de la Independencia", "year": 1808}
+          ]
+        },
+        {
+          "nombre": "Francia",
+          "guerras": [
+            {"nombre": "Primera Guerra Mundial", "year": 1914},
+            {"nombre": "Segunda Guerra Mundial", "year": 1939}
+          ]
+        }
+
+      ]
+    },
+    {
+      "nombre": "America",
+      "paises": [
+        {
+          "nombre": "Estados Unidos",
+          "guerras": [
+            {"nombre": "Guerra de Secesión", "year": 1861},
+            {"nombre": "Guerra de Vietnam", "year": 1955}
+          ]
+        },
+        {
+          "nombre": "Brasil",
+          "guerras": [
+            {"nombre": "Guerra de la Triple Alianza", "year": 1864},
+            {"nombre": "Guerra de Canudos", "year": 1896}
+          ]
+        }
+
+      ]
+    }
+
+  ]
+}

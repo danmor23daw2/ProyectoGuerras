@@ -1,3 +1,4 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 table {
     background-color: #f5f0f0; 
     color:black;
@@ -17,11 +18,25 @@ li {
 li:hover {
     transform: scale(1.1); 
 }
-::ng-deep .mat-form-field {
-    background-color: white !important; /* Cambia el color de fondo del campo de formulario */
-  }
-  
-  ::ng-deep .mat-input-element {
-    color: black !important; /* Cambia el color del texto del campo de entrada */
-  }
-  
+.mat-form-field[value]{
+color:violet;
+}
+.custom-mat-form-field {
+    background-color: rgb(243, 240, 240);
+    width: 15%;
+    height: 8%;
+    border-radius: 3%;
+}
+
+.custom-input {
+    color: rgb(0, 0, 0);
+    border-color: rgb(255, 126, 255);
+}
+
+.custom-option {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+.custom-option:hover{
+    background-color: #e85252;
+}

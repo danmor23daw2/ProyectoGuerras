@@ -5,13 +5,12 @@
 <div style="border: 5px solid rebeccapurple; margin-top: 40px;">
     <div id="map" style="width: 100%; height: 500px;"></div>
 </div>
-
-<mat-form-field appearance="fill">
+<mat-form-field appearance="outline" class="custom-mat-form-field" style="color: red;">
     <input matInput placeholder="Continente" [(ngModel)]="continenteSeleccionado" (click)="cargarContinentes()"
-        [matAutocomplete]="auto">
+        [matAutocomplete]="auto" style="color: black;" class="custom-input">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
         <mat-option *ngFor="let continente of filteredContinentes | async" [value]="continente"
-            (click)="buscarPaises(continente)">
+            (click)="buscarPaises(continente)"  class="custom-option">
             {{ continente }}
         </mat-option>
     </mat-autocomplete>

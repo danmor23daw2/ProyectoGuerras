@@ -67,7 +67,7 @@ export class GeolocationComponent implements OnInit {
           this.paises = paises;
         },
         (error) => {
-          console.error('Error fetching countries:', error);
+          console.error('Error: ', error);
         }
       );
   }

@@ -20,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import {MatTableModule} from '@angular/material/table';
 import {NgIf, NgFor} from '@angular/common';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {NgIf, NgFor} from '@angular/common';
     NgFor,
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

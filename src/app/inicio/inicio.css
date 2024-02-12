@@ -4,6 +4,7 @@
     font-size: 14px;
     margin-top: 10px;
 }
+
 .contenedor {
     display: flex;
     justify-content: space-between;
@@ -13,11 +14,12 @@
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .imagen {
     width: 80%;
-    max-width: 400px; 
+    max-width: 400px;
     margin-left: 60%;
-    border-top-left-radius: 60px; 
+    border-top-left-radius: 60px;
     border-bottom-right-radius: 60px;
     overflow: hidden;
     margin-top: -18%;
@@ -30,10 +32,12 @@
     margin-top: 15%;
     position: relative;
 }
+
 .lineas p {
     margin: 0;
     font-size: 20px;
-}   
+}
+
 .lineas {
     position: absolute;
     top: calc(100% + 10px);
@@ -45,32 +49,50 @@
 }
 
 .contenedor-tarjetas {
-    display: flex; 
-    justify-content: space-between; 
-    color:white;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(0, 0, 0);
 }
-.V{
+
+.V {
     font-family: 'Arial';
 }
-mat-card-title{
+
+mat-card-title {
     font-family: "Exo 2", sans-serif;
+    font-size: 18px;
+}
+
+mat-card-subtitle {
+    color: #333;
 }
 
 .contenedor-tarjetas .ejemplo-tarjeta {
-    width: 100%; 
-    opacity: 0; 
-    margin:4%;
-    transition: opacity 0.5s ease; 
-    
-}
-.contenedor-tarjetas .ejemplo-tarjeta p {
-    margin-top:2%;
-    color:white;
+    width: 100%;
+    opacity: 0;
+    margin: 4%;
+    transition: opacity 0.5s ease;
+
 }
 
-.contenedor.mostrar, .contenedor-tarjetas.mostrar .ejemplo-tarjeta {
-    opacity: 1; 
-    
+.contenedor-tarjetas .ejemplo-tarjeta p {
+    margin-top: 2%;
+    color: rgb(7, 7, 7);
+}
+
+.contenido {
+    width: 90%;
+    height: 23%;
+
+}
+
+.contenido2 {
+    height: 26%;
+}
+.contenedor.mostrar,
+.contenedor-tarjetas.mostrar .ejemplo-tarjeta {
+    opacity: 1;
+
 }
 
 .h1 {
@@ -83,9 +105,14 @@ mat-card-title{
 }
 
 .p {
-    font-family: 'Poor Story', system-ui;
-    font-size: 25px;
+    font-family: 'Salsa', cursive;
+    font-size: 20px;
     color: #333;
+}
+
+.card {
+    font-family: 'Salsa', cursive;
+    font-size: 16px;
 }
 
 .imagen img {
@@ -93,6 +120,21 @@ mat-card-title{
 }
 
 .ejemplo-tarjeta {
-    width: 30%;
-    background-color:purple;
+    background-color: #f3f3f3;
+    color: black;
+}
+
+.example-header-image {
+    background-image: url('../../assets/planeta.png');
+    background-size: cover;
+}
+
+.example-header-image2 {
+    background-image: url('../../assets/religion.png');
+    background-size: cover;
+}
+
+.example-header-image3 {
+    background-image: url('../../assets/protestas.jpg');
+    background-size: cover;
 }

@@ -21,13 +21,18 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import {MatTableModule} from '@angular/material/table';
 import {NgIf, NgFor} from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
+import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component'
 
 @NgModule({
   declarations: [
     Guerras,
     Inicio,
     M11_EncaminamentComponent,
-    GeolocationComponent
+    GeolocationComponent,
+    GuerraDialogComponent
     
   ],
   imports: [
@@ -49,7 +54,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatFormFieldModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

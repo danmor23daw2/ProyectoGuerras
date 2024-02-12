@@ -1,45 +1,26 @@
-<h1
-    style="text-align: left; margin-left:10px;font-size: 40px; margin-top: -50px; color: white; font-family: 'Exo 2', sans-serif;">
-    Geolocalización</h1>
+<h1 style="text-align: left; margin-left:10px;font-size: 40px; margin-top: -50px; color: white; font-family: 'Exo 2', sans-serif;">
+    Geolocalización
+</h1>
 
 <div style="border: 5px solid rebeccapurple; margin-top: 40px;">
     <div id="map" style="width: 100%; height: 500px;"></div>
 </div>
-<form class="custom-form"> <mat-form-field appearance="outline" class="custom-mat-form-field">
-    <input matInput placeholder="Continente" [(ngModel)]="continenteSeleccionado" (click)="cargarContinentes()"
-           [matAutocomplete]="auto" class="custom-input">
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-      <mat-option *ngFor="let continente of filteredContinentes | async" [value]="continente"
-                  (click)="buscarPaises(continente)" class="custom-option">
-        {{ continente }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-</form>
-
 
 <div style="display: flex; flex-direction: row;">
     <div style="flex: 1;">
-        <h2>Lista de Países</h2>
+        <h2><label>Selecciona tu continente favorito: </label></h2>
+        <mat-radio-group [(ngModel)]="continenteSeleccionado">
+            <mat-radio-button *ngFor="let continente of filteredContinentes | async"
+                [value]="continente" (click)="buscarPaises(continente)">
+                <span class="con">{{continente}}</span>
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div style="flex: 1;">
+        <h2>Lista de Países de {{continenteSeleccionado}}</h2>
         <ul>
             <li *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</li>
         </ul>
-    </div>
-
-    <div style="flex: 1;" *ngIf="guerras.length > 0">
-        <h2>Guerras de {{ paisSeleccionado?.nombre }}</h2>
-        <table mat-table [dataSource]="guerras">
-            <ng-container matColumnDef="nombre">
-                <th mat-header-cell *matHeaderCellDef> Nombre de la Guerra </th>
-                <td mat-cell *matCellDef="let guerra"> {{ guerra.nombre }} </td>
-            </ng-container>
-            <ng-container matColumnDef="year">
-                <th mat-header-cell *matHeaderCellDef> Año </th>
-                <td mat-cell *matCellDef="let guerra"> {{ guerra.year }} </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="['nombre', 'year']"></tr>
-            <tr mat-row *matRowDef="let row; columns: ['nombre', 'year'];"></tr>
-        </table>
     </div>
 </div>

@@ -1,18 +1,5 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-table {
-    background-color: #f5f0f0;
-    color: black;
-    width: 100%;
-}
-
-table tr,
-th,
-td {
-    border: 1px solid #ccc;
-    color: black;
-}
-
 li {
     cursor: pointer;
     width: 20%;
@@ -23,29 +10,11 @@ li:hover {
     transform: scale(1.1);
 }
 
-.custom-mat-form-field {
-    margin: 2%;
-    margin-left: 1%;
-    height: 60px;
-    background-color: #766087;
-    border-color: #7c4dff;
-    border-radius: 3%;
+mat-radio-group {
+    display: flex;
+    margin: 15px 0;
+    align-items: flex-start;
 }
-
-.custom-input {
-    border-bottom: 1px solid #7367f0;
-    color: #000000;
-    font-size: 16px;
-    margin-bottom: 5px;
-    background: #f5f5f5;
-}
-
-.custom-option {
-    background: #766087;
-    color: #b9b3b9;
-    font-size: 14px;
-}
-
-.mat-form-field-underline {
-    border-bottom: none;
+.con {
+    color: black; 
 }

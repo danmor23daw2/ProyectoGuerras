@@ -82,12 +82,18 @@ mat-card-subtitle {
 
 .contenido {
     width: 90%;
-    height: 23%;
+    height: 20%;
+
+}
+
+.contenido3{
+    width: 60%;
+    height: 6.5%;
 
 }
 
 .contenido2 {
-    height: 26%;
+    height: 22%;
 }
 .contenedor.mostrar,
 .contenedor-tarjetas.mostrar .ejemplo-tarjeta {
@@ -114,6 +120,9 @@ mat-card-subtitle {
     font-family: 'Salsa', cursive;
     font-size: 16px;
 }
+mat-card-content{
+    margin-top: 5%;
+}
 
 .imagen img {
     width: 50%;
@@ -137,4 +146,11 @@ mat-card-subtitle {
 .example-header-image3 {
     background-image: url('../../assets/protestas.jpg');
     background-size: cover;
+}
+
+mat-spinner {
+    position: relative;
+    top: -40px;
+    margin-left: 70%;
+    
 }

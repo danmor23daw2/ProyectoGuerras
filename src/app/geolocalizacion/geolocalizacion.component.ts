@@ -12,7 +12,8 @@ import { Component } from '@angular/core';
 import { DatosService } from './datos.service';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-
+import { GuerraDialogComponent } from './guerra-dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'aplicacio',
   templateUrl: './geolocalizacion.component.html',
@@ -25,43 +26,35 @@ export class GeolocationComponent implements OnInit {
   paises: any[] = [];
   guerras: any[] = [];
   filteredContinentes: Observable<string[]>;
-  continentes: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía'];
-  
+  continents: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía'];
 
-  constructor(private datosService: DatosService) {
+  constructor(private datosService: DatosService, private dialog: MatDialog) {
     this.filteredContinentes = new Observable<string[]>(observer => {
-      observer.next(this.filterContinentes('')); 
+      observer.next(this.filterContinents(''));
     }).pipe(
       startWith(''),
       map(value => {
         if (Array.isArray(value)) {
-          return this.continentes;
+          return this.continents;
         } else {
-          return this.filterContinentes(value);
+          return this.filterContinents(value);
         }
       })
     );
   }
-  
-  
-  
 
-  private filterContinentes(value: string): string[] {
+  private filterContinents(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.continentes.filter(cont => cont.toLowerCase().includes(filterValue));
-  }
-
-  displayFn(cont: string): string {
-    return cont ? cont : '';
+    return this.continents.filter(continent => continent.toLowerCase().includes(filterValue));
   }
 
   cargarContinentes() {
     this.continenteSeleccionado = '';
   }
-  
-  buscarPaises(cont: string) {
-    if (!cont) return;
-    this.datosService.getPaisesPorContinente(cont)
+
+  buscarPaises(continent: string) {
+    if (!continent) return;
+    this.datosService.getPaisesPorContinente(continent)
       .subscribe(
         (paises: any[]) => {
           this.paises = paises;
@@ -73,8 +66,20 @@ export class GeolocationComponent implements OnInit {
   }
 
   mostrarGuerras(pais: any) {
-    this.guerras = pais.guerras;
     this.paisSeleccionado = pais;
+    this.guerras = pais.guerras;
+    this.openDialog();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(GuerraDialogComponent, {
+      data: { pais: this.paisSeleccionado, guerras: this.guerras }
+    });
+
+    dialogRef.afterClosed().subscribe((result: boolean) => {
+      console.log('El diálogo se ha cerrado');
+    });
+    
   }
 
   ngOnInit(): void {

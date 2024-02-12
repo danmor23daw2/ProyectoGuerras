@@ -1,5 +1,6 @@
 <div>
 <mat-dialog-content class="mat-typography">
+    <h2>Guerras de {{ paisSeleccionado?.nombre }}</h2> 
         <div *ngIf="guerras.length > 0">
             <table mat-table [dataSource]="guerras">
                 <ng-container matColumnDef="nombre">

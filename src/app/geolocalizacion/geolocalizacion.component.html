@@ -18,7 +18,7 @@
     </div>
 
     <div style="flex: 1;">
-        <h2>Lista de Países de {{continenteSeleccionado}}</h2>
+        <h2 class="h2">Lista de Países de {{continenteSeleccionado}}</h2>
         <ul>
             <li *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</li>
         </ul>

@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-guerra-dialog',
@@ -7,9 +7,11 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./guerra-dialog.component.css']
 })
 export class GuerraDialogComponent {
-  guerras: any[];
   paisSeleccionado: any;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
+  guerras: any[];
+
+  constructor(public dialogRef: MatDialogRef<GuerraDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: any) {
+    this.paisSeleccionado = data.pais;
     this.guerras = data.guerras;
   }
 }

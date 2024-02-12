@@ -1,11 +1,20 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
+* {
+    color: black;
+    font-family: 'Salsa', cursive;
+}
+.h2{
+    font-family: 'Salsa', cursive;
+}
 li {
     cursor: pointer;
     width: 20%;
     transition: transform 0.3s ease;
+    font-family: 'Ubuntu', sans-serif;
 }
-
+label{
+    margin-left: 1.5%;
+}
 li:hover {
     transform: scale(1.1);
 }

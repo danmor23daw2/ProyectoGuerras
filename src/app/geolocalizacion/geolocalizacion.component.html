@@ -27,6 +27,9 @@
 </div>
 
 <div *ngIf="continenteSeleccionado === 'Todos'">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar por país">
+    </mat-form-field>
     <table mat-table [dataSource]="informacionCompleta">
         <ng-container matColumnDef="continente">
             <th mat-header-cell *matHeaderCellDef>Continente</th>

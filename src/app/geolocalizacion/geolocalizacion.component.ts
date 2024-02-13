@@ -28,10 +28,9 @@ export class GeolocationComponent implements OnInit {
   guerras: any[] = [];
   filteredContinentes: Observable<string[]>;
   continents: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía','Todos'];
-  dataSource: any[] = [];
   continenteSeleccionado: string = 'Todos';
   paisesPorContinentes: any[] = [];
-  informacionCompleta: any[] = [];
+  informacionCompleta = new MatTableDataSource<any>([]);
 
   constructor(private datosService: DatosService, private dialog: MatDialog) {
     this.filteredContinentes = new Observable<string[]>(observer => {
@@ -93,9 +92,15 @@ export class GeolocationComponent implements OnInit {
   cargarInformacionCompleta() {
     this.datosService.getInformacionCompleta()
       .subscribe((informacion: any[]) => {
-        this.informacionCompleta = informacion;
+        this.informacionCompleta.data = informacion;
       });
   }
+  applyFilter(event: Event) {
+    console.log("Filtrando...");
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.informacionCompleta.filter = filterValue;
+  }
+  
 
   ngOnInit(): void {
     this.iniciarMapa();

@@ -143,7 +143,7 @@ export class GeolocationComponent implements OnInit {
             coordinates = [20, 50]; 
             break;
         case 'Oceanía':
-            coordinates = [140, -30]; 
+            coordinates = [140, -20]; 
             break;
         
         default:

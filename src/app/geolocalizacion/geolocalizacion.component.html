@@ -3,7 +3,7 @@
 </h1>
 
 <div style="border: 5px solid rebeccapurple; margin-top: 40px;">
-    <div id="map" style="width: 100%; height: 300px;"></div>
+    <div id="map" style="width: 100%; height: 400px;"></div>
 </div>
 
 
@@ -12,7 +12,7 @@
         <div style="flex: 1;">
             <h2><label>Selecciona tu continente favorito: </label></h2>
             <mat-radio-group [(ngModel)]="continenteSeleccionado">
-                <mat-radio-button *ngFor="let continente of filteredContinentes | async" [value]="continente" (click)="buscarPaises(continente)">
+                <mat-radio-button *ngFor="let continente of filteredContinentes | async" [value]="continente" (click)="buscarPaises(continente); centrarEnContinente(continente)">
                     <span class="con">{{continente}}</span>
                 </mat-radio-button>
             </mat-radio-group>
@@ -26,9 +26,11 @@
     </div>
 </div>
 
-<div *ngIf="continenteSeleccionado === 'Todos'">
+
+
+<div *ngIf="continenteSeleccionado === 'Todos'" [@fadeInOut]>
     <mat-form-field>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar por país">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar por país" >
     </mat-form-field>
     <table mat-table [dataSource]="informacionCompleta">
         <ng-container matColumnDef="continente">
@@ -60,5 +62,4 @@
         <tr mat-row *matRowDef="let row; columns: ['continente', 'pais', 'guerra', 'year', 'muertes', 'religiones'];"></tr>
     </table>
 </div>
-
 

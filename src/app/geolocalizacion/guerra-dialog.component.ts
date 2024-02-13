@@ -9,6 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class GuerraDialogComponent {
   paisSeleccionado: any;
   guerras: any[];
+  
 
   constructor(public dialogRef: MatDialogRef<GuerraDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: any) {
     this.paisSeleccionado = data.pais;

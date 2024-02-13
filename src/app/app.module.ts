@@ -26,6 +26,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component'
 
+
 @NgModule({
   declarations: [
     Guerras,

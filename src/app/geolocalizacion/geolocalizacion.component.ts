@@ -13,7 +13,8 @@ import { DatosService } from './datos.service';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { GuerraDialogComponent } from './guerra-dialog.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'aplicacio',

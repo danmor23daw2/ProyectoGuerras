@@ -50,3 +50,10 @@ h2 {
     font-family: 'Salsa', cursive;
     color: #7b1fa2;
 }
+mat-form-field {
+    background-color: #af41bb; 
+    border: 1px solid pink;
+    height: 55px;
+    border-radius: 6%;
+}
+

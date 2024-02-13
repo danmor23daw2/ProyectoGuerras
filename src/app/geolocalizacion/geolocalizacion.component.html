@@ -29,7 +29,7 @@
 
 
 <div *ngIf="continenteSeleccionado === 'Todos'" [@fadeInOut]>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar por país" >
     </mat-form-field>
     <table mat-table [dataSource]="informacionCompleta">

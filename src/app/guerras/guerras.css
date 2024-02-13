@@ -13,7 +13,8 @@ body {
     margin-bottom: 2%;
     border-radius: 6px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    animation-name: backInDown;
+    margin-left: 5%;
+    
 }
 
 .titulo {
@@ -26,25 +27,12 @@ p{
     font-size: 18px;
     font-family: 'Salsa' , cursive;
 }
-
-.barraSeleccion{
-  
-}
-
-.cosas{
-    background-color: rgb(241, 234, 234);
-    padding: 3%;
-    border-radius: 2%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-
   mat-icon{
     margin-left:95% ;
     margin-left: 95%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    margin-top: 1%;
   }
 
   mat-icon:hover {
@@ -52,3 +40,13 @@ p{
     transform: scale(1.1);
     
   }
+
+.todo{
+    background-color: rgb(248, 224, 254);
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    border-radius: 2%;
+    margin-bottom: 2%;
+}

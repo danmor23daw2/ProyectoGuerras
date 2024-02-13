@@ -8,29 +8,40 @@
 </head>
 
 <body>
-  <div class="textocontenedor">
-    <div class="cosas">
-      <mat-icon class="copiar" (click)="copiarTexto()">file_copy</mat-icon>
-      <div class="barraSeleccion">
-        <mat-form-field>
-          <mat-label>Selecciona una opcion</mat-label>
-          <mat-select [(ngModel)]="seleccionado" (ngModelChange)="seleccion()">
-            <mat-option value="1">Guerra Santa</mat-option>
-            <mat-option value="2">Guerra Fría</mat-option>
-            <mat-option value="3">Guerra en los Balcanes</mat-option>
-          </mat-select>
-        </mat-form-field>
+ <div class="todo">
+  <mat-tab-group [(selectedIndex)]="seleccionado" (selectedIndexChange)="copiarTexto()">
+    <mat-tab label="Guerra Santa"> <mat-icon class="copiar" (click)="copiarTexto()">file_copy</mat-icon>
+      <h2 class="titulo">La guerra santa</h2>
+      <img class="imagenes" src="./assets/guerra4.jpg">
+      <img class="imagenes" src="/assets/guerra2.jpg">
+      <img class="imagenes" src="./assets/guerra4.png">
+      <div class="informacion">
+        <p>La noción de la "Guerra Santa" en el Islam, conocida como yihad, abarca un concepto complejo que ha sido interpretado de diversas maneras a lo largo de la historia. Mientras algunos la entienden como un llamado a la lucha armada, es crucial destacar que existe una amplia gama de interpretaciones,\n y no todos los musulmanes la ven como una justificación para la violencia.</p><br>
+        <p>La yihad se ha asociado con motivos como la defensa contra la opresión, la persecución de musulmanes y, en algunos casos, la expansión justa del Islam. La jerarquía de causas justas incluye la lucha contra la injusticia como la más noble. Sin embargo, es esencial subrayar que la interpretación pacífica y espiritual de la yihad es adoptada por la mayoría de los musulmanes en la actualidad. Este resumen busca ofrecer una comprensión equilibrada de la Guerra Santa en el Islam, reconociendo su diversidad de interpretaciones y destacando el énfasis de la mayoría de los musulmanes en la promoción de la paz y la convivencia pacífica.</p>
       </div>
-    <h2 class="titulo">{{ titulo }}</h2>
-    <img class="imagenes" [src]="imagen">
-    <img class="imagenes" [src]="imagen1">
-    <img class="imagenes" [src]="imagen2">
-    <div class="informacion">
-    <p>{{ texto }}</p><br>
-    <p>{{ texto2 }}</p>
-  </div>
-  </div>
-  </div>
+    </mat-tab>
+    <mat-tab label="Guerra Fría"><mat-icon class="copiar" (click)="copiarTexto()">file_copy</mat-icon>
+      <h2 class="titulo">Guerra Fría</h2>
+      <img class="imagenes" src="./assets/fria.jpg">
+      <img class="imagenes" src="./assets/fria2.jpg">
+      <img class="imagenes" src="./assets/fria4.jpeg">
+      <div class="informacion">
+        <p>Aunque la Guerra Fría fue principalmente un conflicto ideológico y político entre Estados Unidos y la Unión Soviética, también hubo implicaciones religiosas. La Iglesia Católica desempeñó un papel en la resistencia contra el comunismo en Europa del Este, especialmente en países como Polonia con el movimiento sindical Solidaridad liderado por Lech Walesa. En los países del bloque comunista, la práctica religiosa estaba a menudo restringida y la ideología oficial del comunismo promovía un ateísmo estatal. La Iglesia Católica y otras instituciones religiosas fueron perseguidas en varios lugares, especialmente en la Unión Soviética y sus satélites.</p><br>
+        <p>En muchos países occidentales, la lucha contra el comunismo estuvo vinculada con valores religiosos. El anticomunismo fue a menudo presentado como una defensa contra una ideología que era percibida como ateísta y hostil hacia las creencias religiosas.</p>
+      </div>
+    </mat-tab>
+    <mat-tab label="Guerra en los Balcanes"><mat-icon class="copiar" (click)="copiarTexto()">file_copy</mat-icon>
+      <h2 class="titulo">Guerra en los Balcanes</h2>
+      <img class="imagenes" src="./assets/balca1.jpg">
+      <img class="imagenes" src="./assets/balca2.jpeg">
+      <img class="imagenes" src="./assets/balca3.jpg">
+      <div class="informacion">
+        <p>Los conflictos en la antigua Yugoslavia fueron complejos y tenían diversas dimensiones, incluyendo las étnicas y religiosas. En algunos casos, como en Bosnia y Herzegovina, se produjeron enfrentamientos entre comunidades católicas, ortodoxas y musulmanas.</p><br>
+        <p>En algunos casos, la identidad religiosa también desempeñó un papel en los conflictos. Por ejemplo, la Guerra de Bosnia (1992-1995) involucró tensiones entre comunidades musulmanas, ortodoxas serbias y croatas católicas. Las disputas territoriales, especialmente en lugares como Kosovo y Bosnia y Herzegovina, fueron una causa importante. Grupos étnicos diferentes reclamaban territorios disputados, lo que llevó a conflictos violentos por el control y la autonomía.</p>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
 </body>
 
 </html>

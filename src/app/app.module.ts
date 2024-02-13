@@ -18,6 +18,7 @@ import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {MatListModule} from '@angular/material/list';
     NgFor, 
     MatInputModule, 
     FormsModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

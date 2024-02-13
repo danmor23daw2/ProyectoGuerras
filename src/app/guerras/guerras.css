@@ -1,4 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+
 body {
-    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: #f8f9fa;
 }
+.imagenes{
+    width: 280px;
+    height: 280px;
+    margin-top: 30px;
+    margin-right: 4%;
+    margin-bottom: 2%;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation-name: backInDown;
+}
+
+.titulo {
+    font-size: 36px;
+    font-family: 'Source Code Pro', monospace;
+    margin-top:1% ;
+}
+
+p{
+    font-size: 18px;
+    font-family: 'Salsa' , cursive;
+}
+
+.barraSeleccion{
+  
+}
+
+.cosas{
+    background-color: rgb(241, 234, 234);
+    padding: 3%;
+    border-radius: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+  mat-icon{
+    margin-left:95% ;
+    margin-left: 95%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  mat-icon:hover {
+    color: #353535; 
+    transform: scale(1.1);
+    
+  }

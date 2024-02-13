@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relación entre Religión y Geopolítica en Guerras Históricas</title>
-    <style>
-        body {
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-        #selector{
-    margin-top: 40%;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relación entre Religión y Geopolítica en Guerras Históricas</title>
 </head>
-<body>
-    <h2>{{ selectedTitle }}</h2>
-<div>
-  <p>{{ selectedContent }}</p>
-</div>
 
-<mat-form-field>
-  <mat-label>Select an option</mat-label>
-  <mat-select [(ngModel)]="selectedOption" (ngModelChange)="onOptionSelected()">
-    <mat-option value="1">Option 1</mat-option>
-    <mat-option value="2">Option 2</mat-option>
-    <mat-option value="3">Option 3</mat-option>
-  </mat-select>
-</mat-form-field>
+<body>
+  <div class="textocontenedor">
+    <div class="cosas">
+      <mat-icon class="copiar" (click)="copiarTexto()">file_copy</mat-icon>
+      <div class="barraSeleccion">
+        <mat-form-field>
+          <mat-label>Selecciona una opcion</mat-label>
+          <mat-select [(ngModel)]="seleccionado" (ngModelChange)="seleccion()">
+            <mat-option value="1">Guerra Santa</mat-option>
+            <mat-option value="2">Guerra Fría</mat-option>
+            <mat-option value="3">Guerra en los Balcanes</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    <h2 class="titulo">{{ titulo }}</h2>
+    <img class="imagenes" [src]="imagen">
+    <img class="imagenes" [src]="imagen1">
+    <img class="imagenes" [src]="imagen2">
+    <div class="informacion">
+    <p>{{ texto }}</p><br>
+    <p>{{ texto2 }}</p>
+  </div>
+  </div>
+  </div>
 </body>
+
 </html>

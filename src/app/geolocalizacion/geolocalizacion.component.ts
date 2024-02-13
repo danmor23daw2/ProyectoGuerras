@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { GuerraDialogComponent } from './guerra-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'aplicacio',
@@ -23,12 +23,15 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class GeolocationComponent implements OnInit {
-  continenteSeleccionado: string = '';
   paisSeleccionado: any;
   paises: any[] = [];
   guerras: any[] = [];
   filteredContinentes: Observable<string[]>;
-  continents: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía'];
+  continents: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía','Todos'];
+  dataSource: any[] = [];
+  continenteSeleccionado: string = 'Todos';
+  paisesPorContinentes: any[] = [];
+  informacionCompleta: any[] = [];
 
   constructor(private datosService: DatosService, private dialog: MatDialog) {
     this.filteredContinentes = new Observable<string[]>(observer => {
@@ -43,6 +46,12 @@ export class GeolocationComponent implements OnInit {
         }
       })
     );
+  }
+  cargarPaises() {
+    this.datosService.getPaisesPorContinente(this.continenteSeleccionado)
+      .subscribe((paises: any[]) => {
+        this.paises = paises;
+      });
   }
 
   private filterContinents(value: string): string[] {
@@ -71,8 +80,7 @@ export class GeolocationComponent implements OnInit {
     this.paisSeleccionado = pais;
     this.guerras = pais.guerras;
     this.openDialog();
-  }
-
+}
   openDialog(): void {
     const dialogRef = this.dialog.open(GuerraDialogComponent, {
       data: { pais: this.paisSeleccionado, guerras: this.guerras }
@@ -81,11 +89,17 @@ export class GeolocationComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: boolean) => {
       console.log('El diálogo se ha cerrado');
     });
-    
+  }
+  cargarInformacionCompleta() {
+    this.datosService.getInformacionCompleta()
+      .subscribe((informacion: any[]) => {
+        this.informacionCompleta = informacion;
+      });
   }
 
   ngOnInit(): void {
     this.iniciarMapa();
+    this.cargarInformacionCompleta();
   }
 
   iniciarMapa() {

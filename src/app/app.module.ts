@@ -24,8 +24,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
-import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component'
-
+import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.compo
     Inicio,
     M11_EncaminamentComponent,
     GeolocationComponent,
-    GuerraDialogComponent
-    
+    GuerraDialogComponent,
   ],
   imports: [
     BrowserModule,

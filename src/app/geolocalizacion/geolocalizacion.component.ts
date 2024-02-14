@@ -18,7 +18,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { fromLonLat } from 'ol/proj';
 import {MatPaginator} from '@angular/material/paginator';
 import { ViewChild} from '@angular/core';
-
+import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'aplicacio',
@@ -60,14 +61,24 @@ export class GeolocationComponent implements OnInit {
   informacionCompleta: MatTableDataSource<any> = new MatTableDataSource<any>([]);
   dataSource: MatTableDataSource<any>;
   pageSizeOptions: number[] = [5, 10, 25, 100];
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort = new MatSort;
+
+
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce('Sorting cleared');
+    }
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
-  constructor(private datosService: DatosService, private dialog: MatDialog) {
+  constructor(private datosService: DatosService, private dialog: MatDialog,private _liveAnnouncer: LiveAnnouncer) {
     this.dataSource = this.informacionCompleta;
     this.filteredContinentes = new Observable<string[]>(observer => {
       observer.next(this.filterContinents(''));

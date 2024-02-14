@@ -31,7 +31,7 @@ import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.compo
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -71,6 +71,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatListModule,
     MatPaginatorModule,
     MatSidenavModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [Routing]

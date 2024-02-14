@@ -6,31 +6,31 @@
         {
           "nombre": "España",
           "guerras": [
-            { "nombre": "Guerra Civil Española", "year": 1936, "muertes": "9234 (reales)", "religiones": ["Catolicismo", "Ateísmo"] },
-            { "nombre": "Guerra de la Independencia", "year": 1808, "muertes": "+30000 (aproximadas)", "religiones": ["Catolicismo", "Ateísmo", "Protestantismo"] },
-            { "nombre": "Guerra de Sucesión Española", "year": 1701, "muertes": "+40000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Conquista de Granada", "year": 1492, "muertes": "+50000 (aproximadas)", "religiones": ["Islam", "Catolicismo"] },
-            { "nombre": "Revolución de Asturias", "year": 1934, "muertes": "+2000 (aproximadas)", "religiones": ["Catolicismo"] }
+            { "nombre": "Guerra Civil Española", "year": 1936, "muertes": 540000 , "religiones": ["Catolicismo", "Ateísmo"] },
+            { "nombre": "Guerra de la Independencia", "year": 1808, "muertes": 300000, "religiones": ["Catolicismo", "Ateísmo", "Protestantismo"] },
+            { "nombre": "Guerra de Sucesión Española", "year": 1701, "muertes": 600000 , "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Conquista de Granada", "year": 1492, "muertes": 69, "religiones": ["Islam", "Catolicismo"] },
+            { "nombre": "Revolución de Asturias", "year": 1934, "muertes": 2000 , "religiones": ["Catolicismo"] }
           ]
         },
         {
           "nombre": "Francia",
           "guerras": [
-            { "nombre": "Primera Guerra Mundial", "year": 1914, "muertes": "13000 (reales)", "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] },
-            { "nombre": "Segunda Guerra Mundial", "year": 1939, "muertes": "550000 (reales)", "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] },
-            { "nombre": "Guerra de los Cien Años", "year": 1337, "muertes": "+2000000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Guerra de los Treinta Años", "year": 1618, "muertes": "+8000000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Guerra de Napoleón", "year": 1803, "muertes": "+3500000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] }
+            { "nombre": "Primera Guerra Mundial", "year": 1914, "muertes": 10000000, "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] },
+            { "nombre": "Segunda Guerra Mundial", "year": 1939, "muertes": 17000000, "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] },
+            { "nombre": "Guerra de los Cien Años", "year": 1337, "muertes": 540000, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Guerra de los Treinta Años", "year": 1618, "muertes": 1200, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Guerra de Napoleón", "year": 1803, "muertes": 3500000, "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] }
           ]
         },
         {
           "nombre": "Alemania",
           "guerras": [
-            { "nombre": "Guerra Franco-Prusiana", "year": 1870, "muertes": "24000 (reales)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Guerra de los Campesinos", "year": 1524, "muertes": "+150000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Guerra de los Siete Años", "year": 1756, "muertes": "+1000000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Guerra de los Treinta Años", "year": 1618, "muertes": "+8000000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
-            { "nombre": "Batalla de Stalingrado", "year": 1942, "muertes": "2000000 (reales)", "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] }
+            { "nombre": "Guerra Franco-Prusiana", "year": 1870, "muertes": 138000, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Guerra de los Campesinos", "year": 1524, "muertes": 130000, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Guerra de los Siete Años", "year": 1756, "muertes": 520000, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Guerra de los Treinta Años", "year": 1618, "muertes": 1200, "religiones": ["Catolicismo", "Protestantismo"] },
+            { "nombre": "Batalla de Stalingrado", "year": 1942, "muertes": 2100000, "religiones": ["Catolicismo", "Protestantismo", "Ateísmo"] }
           ]
         },
         {

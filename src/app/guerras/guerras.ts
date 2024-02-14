@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['guerras.css'],
 })
 export class Guerras {
-  seleccionado: number = 0; // Índice de la pestaña seleccionada
+  seleccionado: number = 0;
   titulos: string[] = ['La guerra santa', 'Guerra Fría', 'Guerra en los Balcanes'];
   textos: string[] = [
 

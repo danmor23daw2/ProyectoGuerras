@@ -6,6 +6,7 @@ templateUrl: './inicio.html',
 styleUrls: ['./inicio.css']
 })
 export class Inicio {
+    pageTitle = 'Página de Salutacio';
     mostrarElementos: boolean = false;
 
     @HostListener('window:scroll', [])

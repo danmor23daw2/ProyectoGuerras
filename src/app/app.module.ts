@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+
 @NgModule({
   declarations: [
     Guerras,
@@ -32,7 +33,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatToolbarModule,
     MatMenuModule,
     MatCardModule,
-    ScrollingModule
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

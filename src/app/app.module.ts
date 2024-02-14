@@ -28,6 +28,7 @@ import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.compo
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+
 @NgModule({
   declarations: [
     Guerras,

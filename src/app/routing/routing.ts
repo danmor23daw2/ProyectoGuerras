@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'aplicacio',
@@ -6,11 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./routing.css']
 })
 export class Routing {
-  pageTitle:string = '';
   sidenavOpened = false;
-  
+
   toggleSidenav() {
     this.sidenavOpened = !this.sidenavOpened;
   }
 }
-

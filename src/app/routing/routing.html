@@ -1,37 +1,35 @@
 <mat-toolbar color="primary" class="custom-toolbar">
-  <div class="spacer"></div>
+    <div class="spacer"></div>
 
-  <span class="toolbar-title">Proyecto Guerras</span> 
-  
-  <mat-icon class="menu-icon" (click)="toggleSidenav()">menu</mat-icon>
+    <mat-icon class="menu-icon" (click)="toggleSidenav()">menu</mat-icon>
+
 </mat-toolbar>
 
-
-<mat-sidenav-container>
-  <mat-sidenav [(opened)]="sidenavOpened" class="sidenav">
-      <div class="sidenav-item" mat-button routerLink="/salutacio" routerLinkActive="active">
-          <mat-icon>home</mat-icon>
-          Home
-      </div>
-      <div class="sidenav-item" mat-button routerLink="/geolocalizacion" routerLinkActive="active">
-          <mat-icon>room</mat-icon>
-          Geo
-      </div>
-      <div class="sidenav-item" mat-button routerLink="/religiones" routerLinkActive="active">
-          <mat-icon>local_hospital</mat-icon>
-          Religiones
-      </div>
-      <div class="sidenav-item" mat-button routerLink="/guerras" routerLinkActive="active">
-          <mat-icon>language</mat-icon>
-          Guerras
-      </div>
-      <div class="footer">
-        <img src="../../assets/gato.gif" width="50%" style="margin-top: 130%; margin-left: 50%;">
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-      <div class="main-content">
-          <router-outlet></router-outlet>
-      </div>
-  </mat-sidenav-content>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav [(opened)]="sidenavOpened" class="sidenav">
+        <div class="sidenav-item" mat-button routerLink="/salutacio" routerLinkActive="active">
+            <mat-icon>home</mat-icon>
+            Home
+        </div>
+        <div class="sidenav-item" mat-button routerLink="/geolocalizacion" routerLinkActive="active">
+            <mat-icon>room</mat-icon>
+            Geolocalizacion
+        </div>
+        <div class="sidenav-item" mat-button routerLink="/religiones" routerLinkActive="active">
+            <mat-icon>local_hospital</mat-icon>
+            Religiones
+        </div>
+        <div class="sidenav-item" mat-button routerLink="/guerras" routerLinkActive="active">
+            <mat-icon>language</mat-icon>
+            Guerras
+        </div>
+        <div class="footer">
+            <img src="../../assets/gato2.gif" width="100%" style="margin-top: 50%; ">
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
 </mat-sidenav-container>

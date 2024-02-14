@@ -5,7 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './routing.html',
   styleUrls: ['./routing.css']
 })
-export class M11_EncaminamentComponent {
-  titol = 'DAW2 demo de routing';
+export class Routing {
+  pageTitle:string = '';
+  sidenavOpened = false;
+  
+  toggleSidenav() {
+    this.sidenavOpened = !this.sidenavOpened;
+  }
 }
 

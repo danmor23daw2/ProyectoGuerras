@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppEncaminamentModule } from './app-encaminament.module';
-import {M11_EncaminamentComponent} from './routing/routing'
+import { Routing } from './routing/routing'
 import { GeolocationComponent} from './geolocalizacion/geolocalizacion.component'
 import { Inicio } from './inicio/inicio';
 import { Guerras } from './guerras/guerras';
@@ -30,13 +30,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component'
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
   declarations: [
     Guerras,
     Inicio,
-    M11_EncaminamentComponent,
+    Routing,
     GeolocationComponent,
     GuerraDialogComponent,
   ],
@@ -68,9 +69,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatRadioModule,
     MatDialogModule,
     MatListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSidenavModule,
   ],
   providers: [],
-  bootstrap: [M11_EncaminamentComponent]
+  bootstrap: [Routing]
 })
 export class AppModule { }

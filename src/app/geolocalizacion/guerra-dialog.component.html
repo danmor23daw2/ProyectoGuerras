@@ -2,7 +2,7 @@
     <mat-dialog-content class="mat-typography">
         <h2>Guerras de {{ paisSeleccionado?.nombre }}</h2>
         <div *ngIf="guerras.length > 0">
-            <table mat-table [dataSource]="guerras">
+            <table mat-table [dataSource]="guerras" matSort (matSortChange)="announceSortChange($event)">
                 <ng-container matColumnDef="nombre">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> Nombre
                         de la Guerra </th>

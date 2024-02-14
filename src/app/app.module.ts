@@ -18,6 +18,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {NgIf, NgFor} from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -49,11 +52,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatMenuModule,
     MatCardModule,
     ScrollingModule,
+    MatFormFieldModule, 
+    MatSelectModule, 
+    FormsModule,
+    MatTabsModule,
+    MatGridListModule,
     HttpClientModule,
     MatTableModule,
     NgIf,
     NgFor,
-    MatFormFieldModule,
     MatAutocompleteModule,
     MatInputModule,
     MatProgressBarModule,

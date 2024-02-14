@@ -16,6 +16,9 @@ import { GuerraDialogComponent } from './guerra-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { fromLonLat } from 'ol/proj';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {AfterViewInit, ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'aplicacio',
@@ -42,17 +45,21 @@ export class GeolocationComponent implements OnInit {
   continents: string[] = ['Asia', 'África', 'América', 'Europa', 'Oceanía','Todos'];
   continenteSeleccionado: string = 'Todos';
   paisesPorContinentes: any[] = [];
-  informacionCompleta = new MatTableDataSource<any>([]);
   map!: Map;
-  continentCoordinates: { [key: string]: number[] } = {
-    'Asia': [90, 30],
-    'África': [20, 10],
-    'América': [-100, 10],
-    'Europa': [10, 50],
-    'Oceanía': [140, -25]
-  };
+  displayedColumns: string[] = ['continente', 'pais', 'guerra', 'year', 'muertes', 'religiones']
+  pageSize: number = 5;
+  informacionCompleta: MatTableDataSource<any> = new MatTableDataSource<any>([]);
+  dataSource: MatTableDataSource<any>;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   constructor(private datosService: DatosService, private dialog: MatDialog) {
+    this.dataSource = this.informacionCompleta;
     this.filteredContinentes = new Observable<string[]>(observer => {
       observer.next(this.filterContinents(''));
     }).pipe(
@@ -77,17 +84,20 @@ export class GeolocationComponent implements OnInit {
     const filterValue = value.toLowerCase();
     return this.continents.filter(continent => continent.toLowerCase().includes(filterValue));
   }
-
+  
   cargarContinentes() {
     this.continenteSeleccionado = '';
   }
 
   buscarPaises(continent: string) {
     if (!continent) return;
+    this.continenteSeleccionado = continent;
     this.datosService.getPaisesPorContinente(continent)
       .subscribe(
         (paises: any[]) => {
           this.paises = paises;
+          this.dataSource.paginator = this.paginator;
+          this.cargarInformacionCompleta();
         },
         (error) => {
           console.error('Error: ', error);
@@ -145,6 +155,9 @@ export class GeolocationComponent implements OnInit {
         case 'Oceanía':
             coordinates = [140, -20]; 
             break;
+        case 'Todos':
+            coordinates = [0, 0]; 
+            break;
         
         default:
             return;
@@ -167,7 +180,7 @@ export class GeolocationComponent implements OnInit {
   iniciarMapa() {
     var view = new View({
       center: [0, 0],
-      zoom: 2
+      zoom: 2.5
     });
 
     this.map = new Map({

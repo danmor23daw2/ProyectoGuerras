@@ -1,65 +1,71 @@
 <h1 style="text-align: left; margin-left:10px;font-size: 40px; margin-top: -50px; color: white; font-family: 'Exo 2', sans-serif;">
     Geolocalización
 </h1>
-
-<div style="border: 5px solid rebeccapurple; margin-top: 40px;">
-    <div id="map" style="width: 100%; height: 400px;"></div>
-</div>
-
-
-<div>
-    <div style="display: flex; flex-direction: row;">
-        <div style="flex: 1;">
-            <h2><label>Selecciona tu continente favorito: </label></h2>
+<div class="todo">
+<div style="display: flex; justify-content: space-between;">
+    <div style="flex: 1;">
+        <div style="margin-top: 40px;">
+            <h2><label>Selecciona un continente: </label></h2>
             <mat-radio-group [(ngModel)]="continenteSeleccionado">
-                <mat-radio-button *ngFor="let continente of filteredContinentes | async" [value]="continente" (click)="buscarPaises(continente); centrarEnContinente(continente)">
+                <button mat-raised-button *ngFor="let continente of filteredContinentes | async" [value]="continente" (click)="buscarPaises(continente); centrarEnContinente(continente)">
                     <span class="con">{{continente}}</span>
-                </mat-radio-button>
+                </button>
             </mat-radio-group>
         </div>
-        <div style="flex: 1;" *ngIf="continenteSeleccionado !== 'Todos'">
+        <br>
+        <div class="divCon" *ngIf="continenteSeleccionado !== 'Todos'">
             <h2 class="h2">Lista de Países de {{continenteSeleccionado}}</h2>
-            <ul>
-                <li *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</li>
-            </ul>
+                <mat-list *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</mat-list>
+        </div>
+    </div>
+
+    <div style="flex: 1;">
+        <div style="border: 5px solid rebeccapurple; margin-top: 40px; margin-right: 5%;">
+            <div id="map" style="width: 100%; height: 550px;"></div>
         </div>
     </div>
 </div>
 
 
-
-<div *ngIf="continenteSeleccionado === 'Todos'" [@fadeInOut]>
-    <mat-form-field appearance="outline">
-        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar por país" >
-    </mat-form-field>
-    <table mat-table [dataSource]="informacionCompleta">
+<div class="p" *ngIf="continenteSeleccionado === 'Todos'" [@fadeInOut]>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="continente">
-            <th mat-header-cell *matHeaderCellDef>Continente</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Continente</th>
             <td mat-cell *matCellDef="let info">{{ info.continente }}</td>
         </ng-container>
         <ng-container matColumnDef="pais">
-            <th mat-header-cell *matHeaderCellDef>País</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>País</th>
             <td mat-cell *matCellDef="let info">{{ info.pais }}</td>
         </ng-container>
         <ng-container matColumnDef="guerra">
-            <th mat-header-cell *matHeaderCellDef>Guerra</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Guerra</th>
             <td mat-cell *matCellDef="let info">{{ info.guerra }}</td>
         </ng-container>
         <ng-container matColumnDef="year">
-            <th mat-header-cell *matHeaderCellDef>Año</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Año</th>
             <td mat-cell *matCellDef="let info">{{ info.year }}</td>
         </ng-container>
         <ng-container matColumnDef="muertes">
-            <th mat-header-cell *matHeaderCellDef>Muertes</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Muertes</th>
             <td mat-cell *matCellDef="let info">{{ info.muertes }}</td>
         </ng-container>
         <ng-container matColumnDef="religiones">
-            <th mat-header-cell *matHeaderCellDef>Religiones Implicadas</th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Religiones Implicadas</th>
             <td mat-cell *matCellDef="let info">{{ info.religiones }}</td>
         </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="['continente', 'pais', 'guerra', 'year', 'muertes', 'religiones']"></tr>
-        <tr mat-row *matRowDef="let row; columns: ['continente', 'pais', 'guerra', 'year', 'muertes', 'religiones'];"></tr>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
     </table>
+    <div class="filter-container">
+        <mat-form-field appearance="outline">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar">
+        </mat-form-field>
+    </div>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons [pageSize]="pageSize" [length]="dataSource.data.length">
+    </mat-paginator>
 </div>
 
+</div>

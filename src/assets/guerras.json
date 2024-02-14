@@ -6,11 +6,11 @@
         {
           "nombre": "España",
           "guerras": [
-            { "nombre": "Guerra Civil Española", "year": 1936, "muertes": "9234 (reales)", "religiones": ["Catolicismo", "Ateísmo", "Comunismo"] },
+            { "nombre": "Guerra Civil Española", "year": 1936, "muertes": "9234 (reales)", "religiones": ["Catolicismo", "Ateísmo"] },
             { "nombre": "Guerra de la Independencia", "year": 1808, "muertes": "+30000 (aproximadas)", "religiones": ["Catolicismo", "Ateísmo", "Protestantismo"] },
             { "nombre": "Guerra de Sucesión Española", "year": 1701, "muertes": "+40000 (aproximadas)", "religiones": ["Catolicismo", "Protestantismo"] },
             { "nombre": "Conquista de Granada", "year": 1492, "muertes": "+50000 (aproximadas)", "religiones": ["Islam", "Catolicismo"] },
-            { "nombre": "Revolución de Asturias", "year": 1934, "muertes": "+2000 (aproximadas)", "religiones": ["Catolicismo", "Comunismo"] }
+            { "nombre": "Revolución de Asturias", "year": 1934, "muertes": "+2000 (aproximadas)", "religiones": ["Catolicismo"] }
           ]
         },
         {

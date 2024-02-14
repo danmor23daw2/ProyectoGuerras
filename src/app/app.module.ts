@@ -25,6 +25,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.component'
+import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import {GuerraDialogComponent} from 'src/app/geolocalizacion/guerra-dialog.compo
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [M11_EncaminamentComponent]

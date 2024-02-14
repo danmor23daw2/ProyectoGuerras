@@ -6,17 +6,18 @@
 .h2{
     font-family: 'Salsa', cursive;
 }
-li {
+mat-list{
     cursor: pointer;
     width: 20%;
     transition: transform 0.3s ease;
-    font-family: 'Ubuntu', sans-serif;
+    width: 50%;
+    font-family: 'Salsa', cursive;
 }
 label{
     margin-left: 1.5%;
 
 }
-li:hover {
+mat-list:hover {
     transform: scale(1.1);
 }
 
@@ -51,9 +52,41 @@ h2 {
     color: #7b1fa2;
 }
 mat-form-field {
-    background-color: #af41bb; 
-    border: 1px solid pink;
+    background-color: #7b1fa2; 
     height: 55px;
+    width: 15%;
     border-radius: 6%;
+    border: none;
 }
 
+.divCon{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.p{
+    margin-right: 55%;
+    margin-top: -30%;
+}
+.tabla{
+    height: 10%;
+}
+.todo{
+    margin-left: 2%;
+}
+mat-paginator{
+    margin: 1.5%;
+    font-family: 'Salsa', cursive;
+    background-color: #7b1fa2;
+    width: 100%;
+    height: 100%;
+}
+button{
+    margin: 1.5%;
+    color:#7b1fa2;
+}
+.filter-container {
+    position: absolute;
+    margin-top:-0.8%;
+    width: 40%;
+    border: none;
+}

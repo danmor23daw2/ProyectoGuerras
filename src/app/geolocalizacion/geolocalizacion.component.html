@@ -10,7 +10,7 @@
             </mat-radio-group>
         </div>
         <br>
-        <div class="divCon" *ngIf="continenteSeleccionado !== 'Todos'">
+        <div class="divCon" *ngIf="continenteSeleccionado !== 'Todos'" [@fadeInOut]>
             <h2 class="h2">Lista de Países de {{continenteSeleccionado}}</h2>
                 <mat-list *ngFor="let pais of paises" (click)="mostrarGuerras(pais)">{{ pais.nombre }}</mat-list>
         </div>
@@ -24,7 +24,7 @@
 </div>
 
 
-<div class="p" *ngIf="continenteSeleccionado === 'Todos'" [@fadeInOut]>
+<div class="p" *ngIf="continenteSeleccionado === 'Todos'" [@moveAndRotate]>
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="continente">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Continente</th>

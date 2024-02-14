@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, style, transition, animate } from '@angular/animations';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
@@ -16,8 +16,8 @@ import { GuerraDialogComponent } from './guerra-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { fromLonLat } from 'ol/proj';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {AfterViewInit, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import { ViewChild} from '@angular/core';
 
 
 @Component({
@@ -28,10 +28,19 @@ import {AfterViewInit, ViewChild} from '@angular/core';
     trigger('fadeInOut', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('0.3s ease-out', style({ opacity: 1 }))
+        animate('1s ease-out', style({ opacity: 1 }))
       ]),
       transition(':leave', [
-        animate('0.3s ease-in', style({ opacity: 0 }))
+        animate('0s ease-in', style({ opacity: 0 }))
+      ])
+    ]),
+    trigger('moveAndRotate', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-100px) rotateX(90deg)' }),
+        animate('0.8s ease-out', style({ opacity: 1, transform: 'translateY(0) rotateX(0deg)' }))
+      ]),
+      transition(':leave', [
+        animate('0s ease-in')
       ])
     ])
   ]

@@ -7,19 +7,19 @@
 
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav [(opened)]="sidenavOpened" class="sidenav">
-        <div class="sidenav-item" mat-button routerLink="/salutacio" routerLinkActive="active">
+        <div class="sidenav-item" mat-button routerLink="/salutacio" routerLinkActive="active"(click)="toggleSidenav()"(mouseenter)="enter()"(mouseleave)="leave()">
             <mat-icon>home</mat-icon>
-            Home
+            Inicio
         </div>
-        <div class="sidenav-item" mat-button routerLink="/geolocalizacion" routerLinkActive="active">
+        <div class="sidenav-item" mat-button routerLink="/geolocalizacion" routerLinkActive="active"(click)="toggleSidenav()"(mouseenter)="enter()"(mouseleave)="leave()">
             <mat-icon>room</mat-icon>
             Geolocalizacion
         </div>
-        <div class="sidenav-item" mat-button routerLink="/religiones" routerLinkActive="active">
+        <div class="sidenav-item" mat-button routerLink="/religiones" routerLinkActive="active" (click)="toggleSidenav()"(mouseenter)="enter()"(mouseleave)="leave()">
             <mat-icon>local_hospital</mat-icon>
             Religiones
         </div>
-        <div class="sidenav-item" mat-button routerLink="/guerras" routerLinkActive="active">
+        <div class="sidenav-item" mat-button routerLink="/guerras" routerLinkActive="active" (click)="toggleSidenav()"(mouseenter)="enter()"(mouseleave)="leave()">
             <mat-icon>language</mat-icon>
             Guerras
         </div>

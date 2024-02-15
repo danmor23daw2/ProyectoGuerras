@@ -12,7 +12,7 @@ export class Inicio {
     onWindowScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const windowHeight = window.innerHeight;
-    const triggerScroll = 0.2; 
+    const triggerScroll = 0.4; 
 
     if (scrollPosition > windowHeight * triggerScroll) {
         this.mostrarElementos = true;

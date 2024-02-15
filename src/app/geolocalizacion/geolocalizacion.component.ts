@@ -62,7 +62,7 @@ export class GeolocationComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort = new MatSort;
+  @ViewChild(MatSort) sort!: MatSort ;
 
 
   announceSortChange(sortState: Sort) {
@@ -117,6 +117,7 @@ export class GeolocationComponent implements OnInit {
         (paises: any[]) => {
           this.paises = paises;
           this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
           this.cargarInformacionCompleta();
         },
         (error) => {

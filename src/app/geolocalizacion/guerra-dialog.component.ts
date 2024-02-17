@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ViewChild} from '@angular/core';
-import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
+import {MatSort, Sort} from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({

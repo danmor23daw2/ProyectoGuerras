@@ -12,19 +12,10 @@
   <mat-tab-group [(selectedIndex)]="seleccionado" (selectedIndexChange)="copiarTexto()">
     <mat-tab label="Guerra Santa"> 
       <div class="tabla">
-      <mat-grid-list cols="2">
-        <mat-grid-tile>
-          <img class="imagenes2" src="./assets/guerra4.jpg">
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <img class="imagenes2" src="./assets/guerra2.jpg">
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <img class="imagenes2" src="./assets/guerra3.jpg">
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <img class="imagenes2" src="./assets/guerra4.png">
-        </mat-grid-tile>
+        <mat-grid-list cols="2">
+          <mat-grid-tile *ngFor="let imagen of imagenes" [@fadeIn]>
+            <img class="imagenes2" [src]="imagen.src" alt="Imagen">
+          </mat-grid-tile>
       </mat-grid-list>
     </div>
       <div class="informacion1">

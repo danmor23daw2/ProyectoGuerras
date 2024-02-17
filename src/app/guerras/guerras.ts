@@ -1,11 +1,21 @@
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Component } from '@angular/core';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'aplicacion',
   templateUrl: 'guerras.html',
   styleUrls: ['guerras.css'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-50px)' }),
+        animate('500ms', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+    ]),
+  ],
 })
+
 export class Guerras {
   seleccionado: number = 0;
   titulos: string[] = ['La guerra santa', 'Guerra Fría', 'Guerra en los Balcanes'];
@@ -32,4 +42,14 @@ export class Guerras {
     `;
     this.clipboard.copy(textoACopiar);
   }
+
+  imagenes = [
+    { src: './assets/guerra4.jpg' },
+    { src: './assets/guerra2.jpg' },
+    { src: './assets/guerra3.jpg' },
+    { src: './assets/guerra4.png' },
+  ];
+
+
+
 }

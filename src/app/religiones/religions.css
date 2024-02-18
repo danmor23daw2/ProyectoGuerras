@@ -117,25 +117,21 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: #ddd;
     border-radius: 15px;
 }
 
 progress::-webkit-progress-value {
-    background-color: #4CAF50;
     border-radius: 15px;
 }
 
 progress::-moz-progress-bar {
-    background-color: #4CAF50;
     border-radius: 15px;
 }
 
 progress::-ms-fill {
-    background-color: #4CAF50;
     border-radius: 15px;
 }
 
-#Cristianismo::-moz-progress-bar { background-color: #2196F3; }
-#Islam::-moz-progress-bar { background-color: #FF9800; }
-#Hinduismo::-moz-progress-bar { background-color: #FF5722; }
+#Cristianismo::-moz-progress-bar { background-color: #db39f0; }
+#Islam::-moz-progress-bar { background-color: #8b17a8; }
+#Hinduismo::-moz-progress-bar { background-color: #410841; }
